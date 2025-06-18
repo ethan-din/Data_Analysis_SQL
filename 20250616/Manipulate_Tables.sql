@@ -40,3 +40,56 @@ values
 
 alter Table data_science_jobs
 add column remote boolean
+
+
+select * 
+from data_science_jobs
+
+-- 🟩 Problem 4
+-- Manipulate Tables
+-- Problem Statement
+-- Rename the post_date column to posted_on from the data_science_job table.
+
+alter table data_science_jobs
+rename column post_date to posted_on
+
+-- 🟨 Problem 5
+-- Manipulate Tables
+-- Problem Statement
+-- Modify the remote column so that it defaults to FALSE in the data_science_job table.
+
+alter table data_science_jobs
+alter column remote set DEFAULT FALSE
+insert into data_science_jobs(
+    job_id,
+    job_title,
+    company_name,
+    posted_on
+)
+values(
+    4,'Data Scientist','Google','February 5,2023'
+)
+
+🟩 Problem 6
+Manipulate Tables
+Problem Statement
+Drop the company_name column from the data_science_jobs table.
+
+alter table data_science_jobs
+drop column company_name
+
+🟩 Problem 7
+Manipulate Tables
+Problem Statement
+Update the job posting with the job_id = 2 . 
+Update the remote column for this job posting to TRUE in data_science_jobs.
+
+update data_science_jobs
+set remote=TRUE where job_id=2
+
+🟩 Problem 8
+Manipulate Tables
+Problem Statement
+Drop the data_science_jobs table.
+
+drop table data_science_jobs
